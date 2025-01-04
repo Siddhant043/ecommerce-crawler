@@ -83,7 +83,7 @@ func (c *Crawler) fetchWithRetry(urlStr string, retries int) (*http.Response, er
 		log.Printf("Retrying (%d/%d) for URL: %s\n", i+1, retries, urlStr)
 		time.Sleep(2 * time.Second)
 	}
-	return nil, fmt.Errorf("Failed to fetch URL %s after %d retries", urlStr, retries)
+	return nil, fmt.Errorf("failed to fetch URL %s after %d retries", urlStr, retries)
 }
 
 func (c *Crawler) Crawl(urlStr, domain string, depth int, maxDepth int) {
